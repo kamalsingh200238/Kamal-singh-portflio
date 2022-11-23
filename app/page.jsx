@@ -1,7 +1,9 @@
 export default function Home() {
   return (
-    <div>
-      <div></div>
-    </div>
+    <main>
+      <section>
+        <div className="bg-rose-400">Howdy</div>
+      </section>
+    </main>
   );
 }
