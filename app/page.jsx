@@ -1,9 +1,29 @@
+import Link from "next/link";
+
+const navbarLinks = [
+  {
+    id: "01",
+    link: "",
+    displayName: "About",
+  },
+  {
+    id: "02",
+    link: "",
+    displayName: "Work",
+  },
+  {
+    id: "03",
+    link: "",
+    displayName: "Contact",
+  },
+];
+
 export default function Home() {
   return (
     <main>
-      <nav>
+      <nav className="flex ">
         {/* Logo */}
-        <div>
+        <div className="">
           <svg
             width="100"
             height="100"
@@ -21,6 +41,23 @@ export default function Home() {
               fill="black"
             />
           </svg>
+        </div>
+
+        {/* navbar links */}
+        <div className="">
+          <ul>
+            {navbarLinks.map((link) => (
+              <li key={link.id}>
+                <Link href={link.link}>
+                  <span>{link.id}. </span>
+                  <span>{link.displayName}</span>
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href={"/"}>Resume</Link>
+            </li>
+          </ul>
         </div>
       </nav>
     </main>
