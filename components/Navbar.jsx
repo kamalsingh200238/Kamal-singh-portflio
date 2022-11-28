@@ -27,25 +27,11 @@ const Navbar = () => {
     <nav className="flex justify-between">
       {/* Logo */}
       <div className="">
-        <svg
-          className="h-full "
-          viewBox="0 0 100 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.69873 26.732L50 3.4641L90.3013 26.732V73.268L50 96.5359L9.69873 73.268V26.732Z"
-            stroke="black"
-            stroke-width="6"
-          />
-          <path
-            d="M37.201 67V32.0909H43.5249V48.1307H43.951L57.5703 32.0909H65.2919L51.7919 47.7557L65.4112 67H57.809L47.3942 52.0341L43.5249 56.6023V67H37.201Z"
-            fill="black"
-          />
-        </svg>
+        <Logo />
       </div>
 
-      <div className="z-50">
+      {/* Button to open/close navbar */}
+      <div className="z-50 md:hidden">
         <button onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "close" : "open"}
         </button>
@@ -54,8 +40,8 @@ const Navbar = () => {
       {/* navbar links */}
       <ul
         className={`${
-          isOpen ? "" : "hidden"
-        } max-md:absolute inset-y-0 right-0 flex justify-between max-md:flex-col max-md:py-32`}
+          isOpen ? "" : "max-md:translate-x-full"
+        } max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 flex justify-between max-md:flex-col max-md:py-32`}
       >
         {navbarLinks.map((link) => (
           <li key={link.id} className="">
@@ -72,5 +58,26 @@ const Navbar = () => {
     </nav>
   );
 };
+
+function Logo() {
+  return (
+    <svg
+      className="h-full "
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.69873 26.732L50 3.4641L90.3013 26.732V73.268L50 96.5359L9.69873 73.268V26.732Z"
+        stroke="black"
+        stroke-width="6"
+      />
+      <path
+        d="M37.201 67V32.0909H43.5249V48.1307H43.951L57.5703 32.0909H65.2919L51.7919 47.7557L65.4112 67H57.809L47.3942 52.0341L43.5249 56.6023V67H37.201Z"
+        fill="black"
+      />
+    </svg>
+  );
+}
 
 export default Navbar;
