@@ -3,17 +3,17 @@ import Link from "next/link";
 const navbarLinks = [
   {
     id: "01",
-    link: "",
+    link: "/",
     displayName: "About",
   },
   {
     id: "02",
-    link: "",
+    link: "/",
     displayName: "Work",
   },
   {
     id: "03",
-    link: "",
+    link: "/",
     displayName: "Contact",
   },
 ];
@@ -21,12 +21,11 @@ const navbarLinks = [
 export default function Home() {
   return (
     <main>
-      <nav className="flex ">
+      <nav className="flex h-6 justify-between">
         {/* Logo */}
         <div className="">
           <svg
-            width="100"
-            height="100"
+            className="h-full"
             viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +44,7 @@ export default function Home() {
 
         {/* navbar links */}
         <div className="">
-          <ul>
+          <ul className="flex justify-between gap">
             {navbarLinks.map((link) => (
               <li key={link.id}>
                 <Link href={link.link}>
