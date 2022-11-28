@@ -21,19 +21,64 @@ const navbarLinks = [
   },
 ];
 
-const Navbar = () => {
+export default function Navbar() {
+  // state to track navbar visibility
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="flex justify-between">
-      {/* Logo */}
-      <div className="">
+    <nav className="flex justify-between items-center p-8">
+      {/* Kamal Singh Logo */}
+      <div className="aspect-square h-16">
         <Logo />
       </div>
 
       {/* Button to open/close navbar */}
-      <div className="z-50 md:hidden">
+      <div className="z-50 md:hidden h-full">
         <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? "close" : "open"}
+          <div className="aspect-square h-14">
+            <svg
+              className={`h-full w-full ${
+                isOpen ? "rotate-180" : ""
+              } transition-all duration-200 ease-in-out`}
+              viewBox="0 0 148 139"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                className={`${
+                  isOpen ? "rotate-45" : ""
+                } origin-center transition-all duration-200 ease-in-out`}
+                x="18"
+                y={isOpen ? "62" : "27"} // for better animations
+                width="112"
+                height="14"
+                rx="5"
+                fill="black"
+              />
+              <rect
+                className={`${
+                  isOpen ? "opacity-0" : ""
+                } transition-all duration-200 ease-in-out`}
+                x="18"
+                y="62"
+                width="112"
+                height="14"
+                rx="5"
+                fill="black"
+              />
+              <rect
+                className={`${
+                  isOpen ? "-rotate-45" : ""
+                } origin-center transition-all duration-200 ease-in-out`}
+                x="18"
+                y={isOpen ? "62" : "97"} // for better animations
+                width="112"
+                height="14"
+                rx="5"
+                fill="black"
+              />
+            </svg>
+          </div>
         </button>
       </div>
 
@@ -41,7 +86,7 @@ const Navbar = () => {
       <ul
         className={`${
           isOpen ? "" : "max-md:translate-x-full"
-        } max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 flex justify-between max-md:flex-col max-md:py-32`}
+        } transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 flex justify-between max-md:flex-col max-md:py-56 items-center`}
       >
         {navbarLinks.map((link) => (
           <li key={link.id} className="">
@@ -57,12 +102,12 @@ const Navbar = () => {
       </ul>
     </nav>
   );
-};
+}
 
 function Logo() {
   return (
     <svg
-      className="h-full "
+      className="h-full w-full"
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -79,5 +124,3 @@ function Logo() {
     </svg>
   );
 }
-
-export default Navbar;
