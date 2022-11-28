@@ -37,9 +37,9 @@ export default function Navbar() {
         <button onClick={() => setIsOpen(!isOpen)}>
           <div className="aspect-square h-14">
             <svg
-              className={`h-full w-full ${
+              className={`${
                 isOpen ? "rotate-180" : ""
-              } transition-all duration-200 ease-in-out`}
+              }h-full w-full transition-all duration-200 ease-in-out stroke-secondary`}
               viewBox="0 0 148 139"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -47,35 +47,32 @@ export default function Navbar() {
               <rect
                 className={`${
                   isOpen ? "rotate-45" : ""
-                } origin-center transition-all duration-200 ease-in-out`}
+                } origin-center transition-all duration-200 ease-in-out fill-secondary`}
                 x="18"
                 y={isOpen ? "62" : "27"} // for better animations
                 width="112"
                 height="14"
                 rx="5"
-                fill="black"
               />
               <rect
                 className={`${
                   isOpen ? "opacity-0" : ""
-                } transition-all duration-200 ease-in-out`}
+                } transition-all duration-200 ease-in-out fill-secondary`}
                 x="18"
                 y="62"
                 width="112"
                 height="14"
                 rx="5"
-                fill="black"
               />
               <rect
                 className={`${
                   isOpen ? "-rotate-45" : ""
-                } origin-center transition-all duration-200 ease-in-out`}
+                } origin-center transition-all duration-200 ease-in-out fill-secondary`}
                 x="18"
                 y={isOpen ? "62" : "97"} // for better animations
                 width="112"
                 height="14"
                 rx="5"
-                fill="black"
               />
             </svg>
           </div>
@@ -107,19 +104,18 @@ export default function Navbar() {
 function Logo() {
   return (
     <svg
-      className="h-full w-full"
+      className="h-full w-full stroke-secondary"
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M9.69873 26.732L50 3.4641L90.3013 26.732V73.268L50 96.5359L9.69873 73.268V26.732Z"
-        stroke="black"
         stroke-width="6"
       />
       <path
+        className="fill-secondary"
         d="M37.201 67V32.0909H43.5249V48.1307H43.951L57.5703 32.0909H65.2919L51.7919 47.7557L65.4112 67H57.809L47.3942 52.0341L43.5249 56.6023V67H37.201Z"
-        fill="black"
       />
     </svg>
   );
