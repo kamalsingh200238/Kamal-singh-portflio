@@ -44,28 +44,31 @@ const Navbar = () => {
           />
         </svg>
       </div>
-      <div className="">
+
+      <div className="z-50">
         <button onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "close" : "open"}
         </button>
       </div>
 
       {/* navbar links */}
-      <div className={`${isOpen ? "" : "hidden"}`}>
-        <ul className="flex justify-between">
-          {navbarLinks.map((link) => (
-            <li key={link.id}>
-              <Link href={link.link}>
-                <span>{link.id}. </span>
-                <span>{link.displayName}</span>
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Link href={"/"}>Resume</Link>
+      <ul
+        className={`${
+          isOpen ? "" : "hidden"
+        } max-md:absolute inset-y-0 right-0 flex justify-between max-md:flex-col max-md:py-32 h-full`}
+      >
+        {navbarLinks.map((link) => (
+          <li key={link.id} className="">
+            <Link href={link.link}>
+              <span>{link.id}. </span>
+              <span>{link.displayName}</span>
+            </Link>
           </li>
-        </ul>
-      </div>
+        ))}
+        <li>
+          <Link href={"/"}>Resume</Link>
+        </li>
+      </ul>
     </nav>
   );
 };
