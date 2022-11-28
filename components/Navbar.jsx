@@ -55,7 +55,7 @@ const Navbar = () => {
       <ul
         className={`${
           isOpen ? "" : "hidden"
-        } max-md:absolute inset-y-0 right-0 flex justify-between max-md:flex-col max-md:py-32 h-full`}
+        } max-md:absolute inset-y-0 right-0 flex justify-between max-md:flex-col max-md:py-32`}
       >
         {navbarLinks.map((link) => (
           <li key={link.id} className="">
