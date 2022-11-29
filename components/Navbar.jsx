@@ -26,16 +26,16 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center p-8">
+    <nav className="flex justify-between items-center p-7">
       {/* Kamal Singh Logo */}
-      <div className="aspect-square h-16">
+      <div className="aspect-square h-10">
         <Logo />
       </div>
 
       {/* Button to open/close navbar */}
       <div className="z-50 md:hidden h-full">
         <button onClick={() => setIsOpen(!isOpen)}>
-          <div className="aspect-square h-14">
+          <div className="aspect-square h-10">
             <svg
               className={`${
                 isOpen ? "rotate-180" : ""
@@ -51,7 +51,7 @@ export default function Navbar() {
                 x="18"
                 y={isOpen ? "62" : "27"} // for better animations
                 width="112"
-                height="14"
+                height="10"
                 rx="5"
               />
               <rect
@@ -61,7 +61,7 @@ export default function Navbar() {
                 x="18"
                 y="62"
                 width="112"
-                height="14"
+                height="10"
                 rx="5"
               />
               <rect
@@ -71,7 +71,7 @@ export default function Navbar() {
                 x="18"
                 y={isOpen ? "62" : "97"} // for better animations
                 width="112"
-                height="14"
+                height="10"
                 rx="5"
               />
             </svg>
