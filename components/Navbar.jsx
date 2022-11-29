@@ -87,14 +87,21 @@ export default function Navbar() {
       >
         {navbarLinks.map((link) => (
           <li key={link.id}>
-            <Link href={link.link} className="text-lg max-md:text-center">
-              <span className="text-secondary max-md:block">{link.id}. </span>
-              <span className="text-primary-300">{link.displayName}</span>
+            <Link
+              href={link.link}
+              className="flex items-center justify-center text-lg max-md:flex-col"
+            >
+              <span className="text-secondary">{link.id}.</span>
+              <span className="text-primary-300 transition-all duration-200 ease-in-out hover:text-secondary">
+                {link.displayName}
+              </span>
             </Link>
           </li>
         ))}
         <li>
-          <Link href={"/"}>Resume</Link>
+          <Link href={"/"} className="border border-secondary">
+            Resume
+          </Link>
         </li>
       </ul>
     </nav>
