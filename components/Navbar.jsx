@@ -90,17 +90,17 @@ export default function Navbar() {
           <Link
             key={link.id}
             href={link.link}
-            className="flex items-center justify-center max-md:flex-col"
+            className="group flex items-center justify-center max-md:flex-col"
           >
             <div className="flex items-center justify-center max-md:flex-col md:gap-2">
               <span className="text-secondary">{link.id}.</span>
-              <span className="text-primary-300 transition-all duration-200 ease-in-out hover:text-secondary">
+              <span className="text-primary-300 transition-all duration-200 ease-in-out group-hover:text-secondary">
                 {link.displayName}
               </span>
             </div>
           </Link>
         ))}
-    <LinkButton link ={"/"} displayText={"Resume"} />
+        <LinkButton link={"/"} displayText={"Resume"} />
       </div>
     </nav>
   );
