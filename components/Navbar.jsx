@@ -99,7 +99,10 @@ export default function Navbar() {
           </li>
         ))}
         <li>
-          <Link href={"/"} className="border border-secondary">
+          <Link
+            href={"/"}
+            className="rounded-sm border border-secondary px-6 py-3"
+          >
             Resume
           </Link>
         </li>
