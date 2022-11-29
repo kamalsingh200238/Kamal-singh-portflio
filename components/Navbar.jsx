@@ -26,7 +26,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center p-7">
+    <nav className="flex justify-between items-center p-7 md:px-10 md:py-10">
       {/* Kamal Singh Logo */}
       <div className="aspect-square h-10">
         <Logo />
