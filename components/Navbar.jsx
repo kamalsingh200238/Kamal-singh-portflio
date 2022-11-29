@@ -80,7 +80,7 @@ export default function Navbar() {
       </div>
 
       {/* navbar links */}
-      <ul
+      <div
         className={`${
           isOpen ? "" : "max-md:translate-x-full"
         } flex items-center justify-between gap-6 transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:flex-col max-md:bg-primary-800 max-md:py-40`}
@@ -91,21 +91,21 @@ export default function Navbar() {
             href={link.link}
             className="flex items-center justify-center text-lg max-md:flex-col"
           >
-            <li>
+            <div className="flex items-center justify-center max-md:flex-col">
               <span className="text-secondary">{link.id}.</span>
               <span className="text-primary-300 transition-all duration-200 ease-in-out hover:text-secondary">
                 {link.displayName}
               </span>
-            </li>
+            </div>
           </Link>
         ))}
         <Link
           href={"/"}
           className="rounded-sm border border-secondary px-6 py-3"
         >
-          <li>Resume</li>
+          <div>Resume</div>
         </Link>
-      </ul>
+      </div>
     </nav>
   );
 }
