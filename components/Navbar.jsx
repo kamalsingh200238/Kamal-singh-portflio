@@ -83,29 +83,28 @@ export default function Navbar() {
       <ul
         className={`${
           isOpen ? "" : "max-md:translate-x-full"
-        } flex items-center justify-between gap-6 transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:flex-col max-md:bg-primary-800 max-md:py-56`}
+        } flex items-center justify-between gap-6 transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:flex-col max-md:bg-primary-800 max-md:py-40`}
       >
         {navbarLinks.map((link) => (
-          <li key={link.id}>
-            <Link
-              href={link.link}
-              className="flex items-center justify-center text-lg max-md:flex-col"
-            >
+          <Link
+            key={link.id}
+            href={link.link}
+            className="flex items-center justify-center text-lg max-md:flex-col"
+          >
+            <li>
               <span className="text-secondary">{link.id}.</span>
               <span className="text-primary-300 transition-all duration-200 ease-in-out hover:text-secondary">
                 {link.displayName}
               </span>
-            </Link>
-          </li>
-        ))}
-        <li>
-          <Link
-            href={"/"}
-            className="rounded-sm border border-secondary px-6 py-3"
-          >
-            Resume
+            </li>
           </Link>
-        </li>
+        ))}
+        <Link
+          href={"/"}
+          className="rounded-sm border border-secondary px-6 py-3"
+        >
+          <li>Resume</li>
+        </Link>
       </ul>
     </nav>
   );
