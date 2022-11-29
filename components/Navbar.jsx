@@ -91,7 +91,7 @@ export default function Navbar() {
             href={link.link}
             className="flex items-center justify-center max-md:flex-col"
           >
-            <div className="flex items-center justify-center max-md:flex-col">
+            <div className="flex items-center justify-center max-md:flex-col md:gap-2">
               <span className="text-secondary">{link.id}.</span>
               <span className="text-primary-300 transition-all duration-200 ease-in-out hover:text-secondary">
                 {link.displayName}
