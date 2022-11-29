@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import LinkButton from "./LinkButton";
 
 const navbarLinks = [
   {
@@ -99,12 +100,7 @@ export default function Navbar() {
             </div>
           </Link>
         ))}
-        <Link
-          href={"/"}
-          className="rounded-sm border border-secondary px-6 py-2 text-secondary max-md:mt-8 max-md:px-10"
-        >
-          <div>Resume</div>
-        </Link>
+    <LinkButton link ={"/"} displayText={"Resume"} />
       </div>
     </nav>
   );
