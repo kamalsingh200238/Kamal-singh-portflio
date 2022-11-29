@@ -83,12 +83,12 @@ export default function Navbar() {
       <ul
         className={`${
           isOpen ? "" : "max-md:translate-x-full"
-        } bg-navbar-background flex items-center justify-between transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:flex-col max-md:py-56`}
+        } flex items-center justify-between bg-primary-light-1 transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:flex-col max-md:py-56`}
       >
         {navbarLinks.map((link) => (
           <li key={link.id} className="">
             <Link href={link.link}>
-              <span>{link.id}. </span>
+              <span className="text-secondary">{link.id}. </span>
               <span>{link.displayName}</span>
             </Link>
           </li>

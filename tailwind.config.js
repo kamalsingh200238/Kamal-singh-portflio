@@ -8,9 +8,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#081426",
+        primary: {
+          DEFAULT: "#081426",
+          "light-1": "#0e1b33",
+          "light-2": "#91b4e8",
+        },
         secondary: "#60FFD9",
-        "navbar-background" : "#0e1b33",
       },
     },
   },
