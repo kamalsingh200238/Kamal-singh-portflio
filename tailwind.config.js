@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         primary: "#081426",
         secondary: "#60FFD9",
+        "navbar-background" : "#0e1b33",
       },
     },
   },
