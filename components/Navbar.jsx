@@ -118,7 +118,7 @@ function Logo() {
     >
       <path
         d="M9.69873 26.732L50 3.4641L90.3013 26.732V73.268L50 96.5359L9.69873 73.268V26.732Z"
-        stroke-width="6"
+        strokeWidth="6"
       />
       <path
         className="fill-secondary"
