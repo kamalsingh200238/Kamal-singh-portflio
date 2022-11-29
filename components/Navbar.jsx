@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between items-center p-7 md:px-10 md:py-10 lg:px-14">
       {/* Kamal Singh Logo */}
-      <div className="aspect-square h-10">
+      <div className="aspect-square h-10 lg:h-12">
         <Logo />
       </div>
 
@@ -37,17 +37,15 @@ export default function Navbar() {
         <button onClick={() => setIsOpen(!isOpen)}>
           <div className="aspect-square h-10">
             <svg
-              className={`${
-                isOpen ? "rotate-180" : ""
-              }h-full w-full transition-all duration-200 ease-in-out stroke-secondary`}
+              className={`${isOpen ? "rotate-180" : ""
+                }h-full w-full transition-all duration-200 ease-in-out stroke-secondary`}
               viewBox="0 0 148 139"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect
-                className={`${
-                  isOpen ? "rotate-45" : ""
-                } origin-center transition-all duration-200 ease-in-out fill-secondary`}
+                className={`${isOpen ? "rotate-45" : ""
+                  } origin-center transition-all duration-200 ease-in-out fill-secondary`}
                 x="18"
                 y={isOpen ? "62" : "27"} // for better animations
                 width="112"
@@ -55,9 +53,8 @@ export default function Navbar() {
                 rx="5"
               />
               <rect
-                className={`${
-                  isOpen ? "opacity-0" : ""
-                } transition-all duration-200 ease-in-out fill-secondary`}
+                className={`${isOpen ? "opacity-0" : ""
+                  } transition-all duration-200 ease-in-out fill-secondary`}
                 x="18"
                 y="62"
                 width="112"
@@ -65,9 +62,8 @@ export default function Navbar() {
                 rx="5"
               />
               <rect
-                className={`${
-                  isOpen ? "-rotate-45" : ""
-                } origin-center transition-all duration-200 ease-in-out fill-secondary`}
+                className={`${isOpen ? "-rotate-45" : ""
+                  } origin-center transition-all duration-200 ease-in-out fill-secondary`}
                 x="18"
                 y={isOpen ? "62" : "97"} // for better animations
                 width="112"
@@ -81,9 +77,8 @@ export default function Navbar() {
 
       {/* navbar links */}
       <ul
-        className={`${
-          isOpen ? "" : "max-md:translate-x-full"
-        } transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 flex justify-between max-md:flex-col max-md:py-56 items-center`}
+        className={`${isOpen ? "" : "max-md:translate-x-full"
+          } transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 flex justify-between max-md:flex-col max-md:py-56 items-center`}
       >
         {navbarLinks.map((link) => (
           <li key={link.id} className="">
