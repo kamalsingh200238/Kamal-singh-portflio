@@ -97,13 +97,13 @@ export default function Navbar() {
       </div>
 
       {/* navbar links */}
-      <aside>
-        <nav
-          className={`${
-            isOpen ? "" : "max-md:translate-x-full"
-          } flex items-center justify-between gap-6 text-lg transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:flex-col max-md:bg-primary-800 max-md:py-40 md:gap-10`}
-        >
-          <ol>
+      <aside
+        className={`${
+          isOpen ? "" : "max-md:translate-x-full"
+        } text-lg transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:bg-primary-800 max-md:py-40`}
+      >
+        <nav className="flex items-center justify-center max-md:flex-col gap-6">
+          <ol className="flex items-center justify-center gap-6 max-md:flex-col">
             {navbarLinks.map((link) => (
               <li key={link.id}>
                 <Link
