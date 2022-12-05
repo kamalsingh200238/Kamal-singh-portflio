@@ -54,15 +54,17 @@ export default function Navbar() {
         <button onClick={() => setIsOpen(!isOpen)}>
           <div className="aspect-square h-10">
             <svg
-              className={`${isOpen ? "rotate-180" : ""
-                } h-full w-full stroke-secondary transition-all duration-200 ease-in-out`}
+              className={`${
+                isOpen ? "rotate-180" : ""
+              } h-full w-full stroke-secondary transition-all duration-200 ease-in-out`}
               viewBox="0 0 148 139"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect
-                className={`${isOpen ? "rotate-45" : ""
-                  } origin-center fill-secondary transition-all duration-200 ease-in-out`}
+                className={`${
+                  isOpen ? "rotate-45" : ""
+                } origin-center fill-secondary transition-all duration-200 ease-in-out`}
                 x="18"
                 y={isOpen ? "62" : "27"} // for better animations
                 width="112"
@@ -70,8 +72,9 @@ export default function Navbar() {
                 rx="5"
               />
               <rect
-                className={`${isOpen ? "opacity-0" : ""
-                  } fill-secondary transition-all duration-200 ease-in-out`}
+                className={`${
+                  isOpen ? "opacity-0" : ""
+                } fill-secondary transition-all duration-200 ease-in-out`}
                 x="18"
                 y="62"
                 width="112"
@@ -79,8 +82,9 @@ export default function Navbar() {
                 rx="5"
               />
               <rect
-                className={`${isOpen ? "-rotate-45" : ""
-                  } origin-center fill-secondary transition-all duration-200 ease-in-out`}
+                className={`${
+                  isOpen ? "-rotate-45" : ""
+                } origin-center fill-secondary transition-all duration-200 ease-in-out`}
                 x="18"
                 y={isOpen ? "62" : "97"} // for better animations
                 width="112"
@@ -94,14 +98,14 @@ export default function Navbar() {
 
       {/* navbar links */}
       <aside>
-        <nav className={`${isOpen ? "" : "max-md:translate-x-full"
+        <nav
+          className={`${
+            isOpen ? "" : "max-md:translate-x-full"
           } flex items-center justify-between gap-6 text-lg transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:flex-col max-md:bg-primary-800 max-md:py-40 md:gap-10`}
         >
           <ol>
             {navbarLinks.map((link) => (
-              <li
-                key={link.id}
-              >
+              <li key={link.id}>
                 <Link
                   href={link.link}
                   className="group flex items-center justify-center max-md:flex-col"
@@ -122,4 +126,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

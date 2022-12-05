@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-primary">
       <Navbar />
-      <div className="lg:container mx-auto px-7">
+      <div className="mx-auto px-7 lg:container">
         <section>
           <h1>Hi, my name is</h1>
           <h2>Kamal Singh.</h2>
