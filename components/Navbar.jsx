@@ -93,26 +93,32 @@ export default function Navbar() {
       </div>
 
       {/* navbar links */}
-      <div
-        className={`${isOpen ? "" : "max-md:translate-x-full"
+      <aside>
+        <nav className={`${isOpen ? "" : "max-md:translate-x-full"
           } flex items-center justify-between gap-6 text-lg transition-all duration-200 ease-in-out max-md:absolute max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:flex-col max-md:bg-primary-800 max-md:py-40 md:gap-10`}
-      >
-        {navbarLinks.map((link) => (
-          <Link
-            key={link.id}
-            href={link.link}
-            className="group flex items-center justify-center max-md:flex-col"
-          >
-            <div className="relative flex items-center justify-center py-2 after:absolute after:inset-y-0 after:left-0 after:h-full after:w-0 after:border-b-2 after:transition-all after:duration-200 after:ease-in-out hover:after:w-full max-md:flex-col md:gap-2">
-              <span className="text-secondary">{link.id}.</span>
-              <span className="text-primary-300 transition-all duration-200 ease-in-out group-hover:text-secondary">
-                {link.displayName}
-              </span>
-            </div>
-          </Link>
-        ))}
-        <LinkButton link={"/"} displayText={"Resume"} />
-      </div>
+        >
+          <ol>
+            {navbarLinks.map((link) => (
+              <li
+                key={link.id}
+              >
+                <Link
+                  href={link.link}
+                  className="group flex items-center justify-center max-md:flex-col"
+                >
+                  <div className="relative flex items-center justify-center py-2 after:absolute after:inset-y-0 after:left-0 after:h-full after:w-0 after:border-b-2 after:transition-all after:duration-200 after:ease-in-out hover:after:w-full max-md:flex-col md:gap-2">
+                    <span className="text-secondary">{link.id}.</span>
+                    <span className="text-primary-300 transition-all duration-200 ease-in-out group-hover:text-secondary">
+                      {link.displayName}
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ol>
+          <LinkButton link={"/"} displayText={"Resume"} />
+        </nav>
+      </aside>
     </nav>
   );
 }
