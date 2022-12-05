@@ -27,7 +27,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between p-7 md:px-10 md:py-10 lg:px-14">
+    <nav className="flex items-center justify-between p-7 md:p-10 lg:px-14">
       {/* Kamal Singh Logo */}
       <div className="aspect-square h-10 lg:h-12">
         <svg
@@ -50,7 +50,7 @@ export default function Navbar() {
       </div>
 
       {/* Button to open/close navbar */}
-      <div className="z-50 h-full md:hidden">
+      <div className="z-50 md:hidden">
         <button onClick={() => setIsOpen(!isOpen)}>
           <div className="aspect-square h-10">
             <svg
@@ -100,18 +100,17 @@ export default function Navbar() {
       <aside
         className={`${
           isOpen ? "" : "max-md:translate-x-full"
-        } text-lg transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:bg-primary-800 max-md:py-40`}
+        } grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:bg-primary-800 `}
       >
-        <nav className="flex items-center justify-center max-md:flex-col gap-6">
-          <ol className="flex items-center justify-center gap-6 max-md:flex-col">
-            {navbarLinks.map((link) => (
-              <li key={link.id}>
-                <Link
-                  href={link.link}
-                  className="group flex items-center justify-center max-md:flex-col"
-                >
+        <nav className="flex items-center justify-center gap-6 text-lg max-md:flex-col lg:gap-8">
+          <ol className="flex items-center justify-center gap-6 max-md:flex-col lg:gap-8">
+            {navbarLinks.map((link, index) => (
+              <li key={link.displayName}>
+                <Link href={link.link} className="group block">
                   <div className="relative flex items-center justify-center py-2 after:absolute after:inset-y-0 after:left-0 after:h-full after:w-0 after:border-b-2 after:transition-all after:duration-200 after:ease-in-out hover:after:w-full max-md:flex-col md:gap-2">
-                    <span className="text-secondary">{link.id}.</span>
+                    <span className="text-secondary">
+                      {String("0" + (index + 1)).slice(-2)}.
+                    </span>
                     <span className="text-primary-300 transition-all duration-200 ease-in-out group-hover:text-secondary">
                       {link.displayName}
                     </span>
