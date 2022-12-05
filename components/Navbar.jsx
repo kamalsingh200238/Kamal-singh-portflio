@@ -108,7 +108,7 @@ export default function Navbar() {
               <li key={link.displayName}>
                 <Link href={link.link} className="group block">
                   <div className="relative flex items-center justify-center py-2 after:absolute after:inset-y-0 after:left-0 after:h-full after:w-0 after:border-b-2 after:transition-all after:duration-200 after:ease-in-out hover:after:w-full max-md:flex-col md:gap-2">
-                    <span className="text-secondary">
+                    <span className="font-fira text-secondary">
                       {String("0" + (index + 1)).slice(-2)}.
                     </span>
                     <span className="text-primary-300 transition-all duration-200 ease-in-out group-hover:text-secondary">
