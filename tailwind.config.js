@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        fira: ["var(--font-fira-code)", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
