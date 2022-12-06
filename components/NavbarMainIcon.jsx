@@ -4,11 +4,15 @@ export default function NavbarMainIcon() {
   const outerPathVariant = {
     hidden: {
       pathLength: 0,
+      opacity: 0,
     },
     visible: {
       pathLength: 1,
+      opacity: 1,
+      transition: { duration: 1.5, type: "spring" },
     },
   };
+
   return (
     <div className="aspect-square h-10 lg:h-12">
       <motion.svg
@@ -25,7 +29,6 @@ export default function NavbarMainIcon() {
           strokeLinecap="round"
           strokeLinejoin="round"
           variants={outerPathVariant}
-          transition={{ duration: 3, type: "spring" }}
         />
         <path
           className="fill-secondary"
