@@ -18,15 +18,17 @@ export default function Navbar() {
         <button onClick={() => setIsOpen(!isOpen)}>
           <div className="aspect-square h-10">
             <svg
-              className={`${isOpen ? "rotate-180" : ""
-                } h-full w-full stroke-secondary transition-all duration-200 ease-in-out`}
+              className={`${
+                isOpen ? "rotate-180" : ""
+              } h-full w-full stroke-secondary transition-all duration-200 ease-in-out`}
               viewBox="0 0 148 139"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect
-                className={`${isOpen ? "rotate-45" : ""
-                  } origin-center fill-secondary transition-all duration-200 ease-in-out`}
+                className={`${
+                  isOpen ? "rotate-45" : ""
+                } origin-center fill-secondary transition-all duration-200 ease-in-out`}
                 x="18"
                 y={isOpen ? "62" : "27"} // for better animations
                 width="112"
@@ -34,8 +36,9 @@ export default function Navbar() {
                 rx="5"
               />
               <rect
-                className={`${isOpen ? "opacity-0" : ""
-                  } fill-secondary transition-all duration-200 ease-in-out`}
+                className={`${
+                  isOpen ? "opacity-0" : ""
+                } fill-secondary transition-all duration-200 ease-in-out`}
                 x="18"
                 y="62"
                 width="112"
@@ -43,8 +46,9 @@ export default function Navbar() {
                 rx="5"
               />
               <rect
-                className={`${isOpen ? "-rotate-45" : ""
-                  } origin-center fill-secondary transition-all duration-200 ease-in-out`}
+                className={`${
+                  isOpen ? "-rotate-45" : ""
+                } origin-center fill-secondary transition-all duration-200 ease-in-out`}
                 x="18"
                 y={isOpen ? "62" : "97"} // for better animations
                 width="112"

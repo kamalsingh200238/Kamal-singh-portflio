@@ -19,8 +19,9 @@ const navbarLinks = [
 export default function NavbarLinks({ isOpen }) {
   return (
     <aside
-      className={`${isOpen ? "" : "max-md:translate-x-full"
-        } grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:bg-primary-800 `}
+      className={`${
+        isOpen ? "" : "max-md:translate-x-full"
+      } grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:bg-primary-800 `}
     >
       <nav className="flex items-center justify-center gap-6 text-sm max-md:flex-col lg:gap-8">
         <ol className="flex items-center justify-center gap-6 max-md:flex-col lg:gap-8">
@@ -42,5 +43,5 @@ export default function NavbarLinks({ isOpen }) {
         <LinkButton link={"/"} displayText={"Resume"} />
       </nav>
     </aside>
-  )
+  );
 }
