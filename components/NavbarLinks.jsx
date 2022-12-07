@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import Link from "next/link";
 import LinkButton from "./LinkButton";
 
@@ -17,30 +21,68 @@ const navbarLinks = [
 ];
 
 export default function NavbarLinks({ isOpen }) {
+  // this function converts 1 => 01 or 2 => 02
+  const addingZero = (index) => {
+    return String("0" + index).slice(-2);
+  };
+
+  // animation for navbar links container (ol)
+  const linkContainerVarient = {
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  // animation for navbar links children (li)
+  const linkVarient = {
+    hidden: {
+      y: "-100%",
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { duration: 0.3 },
+        opacity: { duration: 0.01 },
+      },
+    },
+  };
+
   return (
     <aside
       className={`${
         isOpen ? "" : "max-md:translate-x-full"
       } grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:bg-primary-800 `}
     >
-      <nav className="flex items-center justify-center gap-6 text-sm max-md:flex-col lg:gap-8">
-        <ol className="flex items-center justify-center gap-6 max-md:flex-col lg:gap-8">
+      <nav className="text-sm max-md:text-lg">
+        <motion.ol
+          initial="hidden"
+          animate="visible"
+          variants={linkContainerVarient}
+          className="flex items-center justify-center gap-6 max-md:flex-col lg:gap-8"
+        >
           {navbarLinks.map((link, index) => (
-            <li key={link.displayName}>
+            <motion.li variants={linkVarient} key={link.displayName}>
               <Link href={link.link} className="group block">
-                <div className="relative flex items-center justify-center py-2 after:absolute after:inset-y-0 after:left-0 after:h-full after:w-0 after:border-b-2 after:transition-all after:duration-200 after:ease-in-out hover:after:w-full max-md:flex-col md:gap-2">
+                <div className="relative flex items-center justify-center py-2 after:absolute after:inset-y-0 after:left-0 after:h-full after:w-0 after:border-b-2 after:border-b-secondary after:transition-all after:duration-200 after:ease-in-out hover:after:w-full max-md:flex-col md:gap-2">
                   <span className="font-fira text-secondary">
-                    {String("0" + (index + 1)).slice(-2)}.
+                    {addingZero(index + 1)}.
                   </span>
                   <span className="text-primary-300 transition-all duration-200 ease-in-out group-hover:text-secondary">
                     {link.displayName}
                   </span>
                 </div>
               </Link>
-            </li>
+            </motion.li>
           ))}
-        </ol>
-        <LinkButton link={"/"} displayText={"Resume"} />
+          <motion.li variants={linkVarient}>
+            <LinkButton link={"/"} displayText={"Resume"} />
+          </motion.li>
+        </motion.ol>
       </nav>
     </aside>
   );
