@@ -56,7 +56,7 @@ export default function NavbarLinks({ isOpen }) {
     <aside
       className={`${
         isOpen ? "" : "max-md:translate-x-full"
-      } grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:bg-primary-800 `}
+      } grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:max-w-xs max-md:bg-primary-800 `}
     >
       <nav className="text-sm max-md:text-lg">
         <motion.ol
