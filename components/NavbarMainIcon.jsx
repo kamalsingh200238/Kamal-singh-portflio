@@ -3,28 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function NavbarMainIcon() {
-  const outerPathVariant = {
-    hidden: {
-      pathLength: 0,
-      opacity: 0,
-    },
-    visible: {
-      pathLength: 1,
-      opacity: 1,
-      transition: { duration: 1.5, type: "spring" },
-    },
-  };
-
-  const innerTextVariant = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: { delay: 0.8, duration: 0.1 },
-    },
-  };
-
   return (
     <div className="aspect-square h-10 lg:h-12">
       <motion.svg
@@ -40,11 +18,29 @@ export default function NavbarMainIcon() {
           strokeWidth="6"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={outerPathVariant}
+          variants={{
+            hidden: {
+              pathLength: 0,
+              opacity: 0,
+            },
+            visible: {
+              pathLength: 1,
+              opacity: 1,
+              transition: { duration: 1.5, type: "spring" },
+            },
+          }}
         />
         <motion.path
           className="fill-secondary"
-          variants={innerTextVariant}
+          variants={{
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+              transition: { delay: 0.8, duration: 0.1 },
+            },
+          }}
           d="M37.201 67V32.0909H43.5249V48.1307H43.951L57.5703 32.0909H65.2919L51.7919 47.7557L65.4112 67H57.809L47.3942 52.0341L43.5249 56.6023V67H37.201Z"
         />
       </motion.svg>

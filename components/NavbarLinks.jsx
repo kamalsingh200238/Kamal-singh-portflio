@@ -22,7 +22,6 @@ const navbarLinks = [
 ];
 
 export default function NavbarLinks({ isOpen, setIsOpen, navbarRef }) {
-  
   // this function converts 1 => 01 or 2 => 02
   const addingZero = (index) => {
     return String("0" + index).slice(-2);
