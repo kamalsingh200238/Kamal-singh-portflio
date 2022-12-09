@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 import Link from "next/link";
+import { useEffect } from "react";
 import LinkButton from "./LinkButton";
 
 const navbarLinks = [
@@ -20,20 +21,10 @@ const navbarLinks = [
   },
 ];
 
-export default function NavbarLinks({ isOpen }) {
+export default function NavbarLinks({ isOpen, setIsOpen, navbarRef }) {
   // this function converts 1 => 01 or 2 => 02
   const addingZero = (index) => {
     return String("0" + index).slice(-2);
-  };
-
-  // animation for navbar links container (ol)
-  const linkContainerVarient = {
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
   };
 
   // animation for navbar links children (li)
@@ -52,8 +43,27 @@ export default function NavbarLinks({ isOpen }) {
     },
   };
 
+  useEffect(() => {
+    const handler = (e) => {
+      if (
+        !navbarRef.current.contains(
+          e.target
+        ) /* && !hamburgerMenuRef.current.contains(e.target) */
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handler);
+
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  });
+
   return (
     <aside
+      ref={navbarRef}
       className={`${
         isOpen ? "" : "max-md:translate-x-full"
       } grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:max-w-xs max-md:bg-primary-800 `}
@@ -62,7 +72,14 @@ export default function NavbarLinks({ isOpen }) {
         <motion.ol
           initial="hidden"
           animate="visible"
-          variants={linkContainerVarient}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3,
+              },
+            },
+          }}
           className="flex items-center justify-center gap-6 max-md:flex-col lg:gap-8"
         >
           {navbarLinks.map((link, index) => (

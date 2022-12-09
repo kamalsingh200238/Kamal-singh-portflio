@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function NavbarMainIcon() {
-  
   const outerPathVariant = {
     hidden: {
       pathLength: 0,
@@ -15,7 +14,7 @@ export default function NavbarMainIcon() {
       transition: { duration: 1.5, type: "spring" },
     },
   };
-  
+
   const innerTextVariant = {
     hidden: {
       opacity: 0,

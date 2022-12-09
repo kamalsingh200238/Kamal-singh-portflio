@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import NavbarLinks from "./NavbarLinks";
 import NavbarMainIcon from "./NavbarMainIcon";
 
 export default function Navbar() {
   // state to track navbar visibility
   const [isOpen, setIsOpen] = useState(false);
+  const navbarRef = useRef();
 
   return (
     <nav className="flex items-center justify-between p-7 md:p-10 lg:px-14">
@@ -61,7 +62,11 @@ export default function Navbar() {
       </div>
 
       {/* navbar links */}
-      <NavbarLinks isOpen={isOpen} />
+      <NavbarLinks
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        navbarRef={navbarRef}
+      />
     </nav>
   );
 }
