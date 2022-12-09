@@ -7,6 +7,8 @@ import NavbarMainIcon from "./NavbarMainIcon";
 export default function Navbar() {
   // state to track navbar visibility
   const [isOpen, setIsOpen] = useState(false);
+  
+  // ref to close currently open navbar menu in mobile view
   const navbarRef = useRef();
 
   return (
@@ -38,7 +40,7 @@ export default function Navbar() {
               />
               <rect
                 className={`${
-                  isOpen ? "opacity-0" : ""
+                  isOpen ? "opacity-0" : "opacity-100"
                 } fill-secondary transition-all duration-200 ease-in-out`}
                 x="18"
                 y="62"
