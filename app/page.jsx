@@ -1,12 +1,14 @@
 import LinkButton from "../components/LinkButton";
 import Navbar from "../components/Navbar";
 import LeftSideFixedButton from "../components/LeftSideFixedButton";
+import RightSideFixedButton from "../components/RightSideFixedButton";
 
 export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-primary">
       <Navbar />
       <LeftSideFixedButton />
+      <RightSideFixedButton />
       <main className="mx-auto max-w-5xl px-7 md:px-10 lg:px-24">
         <section className="grid min-h-[50vh] items-center">
           <div className="flex flex-col gap-2 md:gap-4">
