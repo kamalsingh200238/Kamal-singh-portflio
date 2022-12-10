@@ -28,7 +28,7 @@ const LeftSideFixedButton = () => {
             <AiFillLinkedin />
           </Link>
         </div>
-        <div className="h-4/5 w-[1px] self-end bg-gray-400" />
+        <div className="h-24 w-[1px] self-end bg-gray-400" />
       </div>
     </aside>
   );
