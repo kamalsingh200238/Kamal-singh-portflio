@@ -10,7 +10,7 @@ export default function Home() {
       <LeftSideFixedButton />
       <RightSideFixedButton />
       <main className="mx-auto max-w-5xl px-7 md:px-10 lg:px-24">
-        <section className="grid min-h-[50vh] items-center">
+        <section className="grid min-h-[60vh] items-center">
           <div className="flex flex-col gap-2 md:gap-4">
             <h1 className="font-fira text-sm text-secondary">Hi, my name is</h1>
             <h2 className="text-4xl font-bold text-primary-300 md:text-6xl lg:text-7xl">
@@ -25,8 +25,10 @@ export default function Home() {
                 developing beautifull and acessible websites.
               </p>
             </div>
+            <span className="mt-5">
+              <LinkButton displayText={"Contact Me"} link={"/"} />
+            </span>
           </div>
-          {/* <LinkButton displayText={"Contact Me"} link={"/"}/> */}
         </section>
       </main>
     </div>
