@@ -43,6 +43,7 @@ export default function NavbarLinks({ isOpen, setIsOpen, navbarRef }) {
     },
   };
 
+  // click outside of navbar to close it
   useEffect(() => {
     const handler = (e) => {
       if (
@@ -66,7 +67,7 @@ export default function NavbarLinks({ isOpen, setIsOpen, navbarRef }) {
       ref={navbarRef}
       className={`${
         isOpen ? "" : "max-md:translate-x-full"
-      } grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:max-w-xs max-md:bg-primary-800 `}
+      } z-10 grid place-items-center transition-all duration-200 ease-in-out max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:w-2/3 max-md:max-w-xs max-md:bg-primary-800`}
     >
       <nav className="text-sm max-md:text-base">
         <motion.ol
@@ -84,7 +85,10 @@ export default function NavbarLinks({ isOpen, setIsOpen, navbarRef }) {
         >
           {navbarLinks.map((link, index) => (
             <motion.li variants={linkVarient} key={link.displayName}>
-              <Link href={link.link} className="group block">
+              <Link
+                href={link.link}
+                className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+              >
                 <div className="relative flex items-center justify-center py-2 after:absolute after:inset-y-0 after:left-0 after:h-full after:w-0 after:border-b-2 after:border-b-secondary after:transition-all after:duration-200 after:ease-in-out hover:after:w-full max-md:flex-col md:gap-2">
                   <span className="font-fira text-secondary">
                     {addingZero(index + 1)}.
@@ -96,7 +100,7 @@ export default function NavbarLinks({ isOpen, setIsOpen, navbarRef }) {
               </Link>
             </motion.li>
           ))}
-          <motion.li variants={linkVarient}>
+          <motion.li variants={linkVarient} className="max-md:mt-5">
             <LinkButton link={"/"} displayText={"Resume"} />
           </motion.li>
         </motion.ol>
