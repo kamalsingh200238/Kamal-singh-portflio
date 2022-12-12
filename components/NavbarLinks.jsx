@@ -77,7 +77,6 @@ export default function NavbarLinks({ isOpen, setIsOpen, navbarRef }) {
             visible: {
               transition: {
                 staggerChildren: 0.1,
-                delayChildren: 0.3,
               },
             },
           }}

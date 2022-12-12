@@ -1,7 +1,7 @@
-import LinkButton from "../components/LinkButton";
 import Navbar from "../components/Navbar";
 import LeftSideFixedButton from "../components/LeftSideFixedButton";
 import RightSideFixedButton from "../components/RightSideFixedButton";
+import HeroSection from "../components/HeroSection";
 
 export default function Home() {
   return (
@@ -10,24 +10,21 @@ export default function Home() {
       <LeftSideFixedButton />
       <RightSideFixedButton />
       <main className="mx-auto max-w-5xl px-7 md:px-10 lg:px-24">
-        <section className="grid min-h-[60vh] items-center">
-          <div className="flex flex-col gap-2 md:gap-4">
-            <h1 className="font-fira text-sm text-secondary">Hi, my name is</h1>
-            <h2 className="text-4xl font-bold text-primary-300 md:text-6xl lg:text-7xl">
-              Kamal Singh.
-            </h2>
-            <h2 className="text-3xl font-bold text-gray-400 md:text-5xl">
-              I build things for the web
-            </h2>
-            <div className="mt-4 max-w-md text-gray-400">
-              <p className="">
-                I{"'"}m a self-taught Front End Developer specializing in
-                developing beautifull and acessible websites.
-              </p>
+        <HeroSection />
+        <section>
+          <div className="relative max-w-fit">
+            <h3 className="text-primary-300"><span className="text-secondary font-fira">01.</span> About me</h3>
+            <div className="absolute h-px w-28 top-1/2 -right-[125%] bg-gray-400/20"></div>
+          </div>
+          <div className="grid">
+            <div>
+            <p></p>
+            <p></p>
+            <p></p>
             </div>
-            <span className="mt-5">
-              <LinkButton displayText={"Contact Me"} link={"/"} />
-            </span>
+            <div>
+
+            </div>
           </div>
         </section>
       </main>

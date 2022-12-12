@@ -26,7 +26,7 @@ export default function NavbarMainIcon() {
             visible: {
               pathLength: 1,
               opacity: 1,
-              transition: { duration: 1.5, type: "spring" },
+              transition: { duration: 1, type: "tween", ease: "easeInOut" },
             },
           }}
         />
@@ -38,7 +38,7 @@ export default function NavbarMainIcon() {
             },
             visible: {
               opacity: 1,
-              transition: { delay: 0.8, duration: 0.1 },
+              transition: { delay: 1, duration: 0.1 },
             },
           }}
           d="M37.201 67V32.0909H43.5249V48.1307H43.951L57.5703 32.0909H65.2919L51.7919 47.7557L65.4112 67H57.809L47.3942 52.0341L43.5249 56.6023V67H37.201Z"
