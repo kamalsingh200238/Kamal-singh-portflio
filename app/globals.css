@@ -2,6 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --secondary-color: #60ffd9;
+  --primary-color-300: #b3cbef;
+}
+
 .vertical-text {
   writing-mode: vertical-lr;
+}
+
+.link-button {
+  position: relative;
+  display: inline-block;
+  border-radius: 0.125rem;
+  border: 1px solid var(--secondary-color);
+  padding-left: 1.5rem /* 24px */;
+  padding-right: 1.5rem /* 24px */;
+  padding-top: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+  color: var(--secondary-color);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.link-button::before,
+.link-button::after {
+  content: "";
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.link-button::before {
+  left: 0px;
+  bottom: 0px;
+}
+
+.link-button::after {
+  right: 0;
+  top: 0;
+}
+
+.link-button:hover::before,
+.link-button:hover::after {
+  height: 100%;
+  width: 100%;
+}
+
+.link-button:hover::before {
+  border-left: 2px solid var(--primary-color-300);
+  border-bottom: 2px solid var(--primary-color-300);
+}
+
+.link-button:hover::after {
+  border-right: 2px solid var(--primary-color-300);
+  border-top: 2px solid var(--primary-color-300);
 }
